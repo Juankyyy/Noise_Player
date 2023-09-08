@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 :root {
     --svgBackground: #0f0f0f;
     --webBackground: #222;
@@ -24,6 +26,8 @@ button {
 }
 
 .contenedor {
+    margin: 10px;
+    text-align: center;
     background-color: #282C35;
     border-radius: 20px;
     width: 465px;
@@ -50,4 +54,23 @@ button {
 .svgs:hover {
     color: #fff;
     transform: scale(1.15, 1.15);
+}
+
+.footerContent {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;
+}
+
+.footer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #afa89b;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.footer:hover {
+    color: #7282ff;
 }
