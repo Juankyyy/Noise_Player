@@ -1,0 +1,53 @@
+:root {
+    --svgBackground: #0f0f0f;
+    --webBackground: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--webBackground);
+}
+
+button {
+    border: none;
+}
+
+.content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    background-color: #282C35;
+    border-radius: 20px;
+    width: 465px;
+}
+
+.iconos {
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.svgs {
+    margin: 5px;
+    cursor: pointer;
+    background-color: var(--svgBackground);
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffffff6c;
+    transition: all 0.3s;
+}
+
+.svgs:hover {
+    color: #fff;
+    transform: scale(1.15, 1.15);
+}
