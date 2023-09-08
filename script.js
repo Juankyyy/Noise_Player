@@ -9,21 +9,21 @@ viento.addEventListener("click", reproducirViento);
 bosque.addEventListener("click", reproducirBosque);
 
 function reproducirLluvia() {
-    const audio = new Audio("./noises/Rain.mp3");
+    const audio = new Audio("./Noises/Rain.mp3");
     audio.play();
 }
 
 function reproducirFuego() {
-    const audio = new Audio("./noises/Fire.mp3");
+    const audio = new Audio("./Noises/Fire.mp3");
     audio.play();
 }
 
 function reproducirViento() {
-    const audio = new Audio("./noises/Wind.mp3");
+    const audio = new Audio("./Noises/Wind.mp3");
     audio.play();
 }
 
 function reproducirBosque() {
-    const audio = new Audio("./noises/Forest.mp3");
+    const audio = new Audio("./Noises/Forest.mp3");
     audio.play();
 }
