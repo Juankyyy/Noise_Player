@@ -8,10 +8,10 @@ let numFire = 1
 let numWind = 1
 let numForest = 1
 
-const rainAudio = new Audio("./Noises/rain.mp3");
-const fireAudio = new Audio("./Noises/fire.mp3");
-const windAudio = new Audio("./Noises/wind.mp3");
-const forestAudio = new Audio("./Noises/forest.mp3");
+const rainAudio = new Audio("./Noises/Rain.mp3");
+const fireAudio = new Audio("./Noises/Fire.mp3");
+const windAudio = new Audio("./Noises/Wind.mp3");
+const forestAudio = new Audio("./Noises/Forest.mp3");
 
 rainAudio.loop = true
 fireAudio.loop = true
