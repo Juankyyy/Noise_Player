@@ -11,10 +11,10 @@ let numWind = 1
 let numForest = 1
 
 // Se inicializan los audios de cada ruido
-const rainAudio = new Audio("./Noises/Rain.mp3");
-const fireAudio = new Audio("./Noises/Fire.mp3");
-const windAudio = new Audio("./Noises/Wind.mp3");
-const forestAudio = new Audio("./Noises/Forest.mp3");
+const rainAudio = new Audio("https://audio.jukehost.co.uk/smiGqvi8LswQjRTuYuu5TmQvsCNR8uvl");
+const fireAudio = new Audio("https://audio.jukehost.co.uk/3BhvwuVmVCbFdRr7NobzHpv6ejz2gKf9");
+const windAudio = new Audio("https://audio.jukehost.co.uk/03aTbyCFpo72xAbmXv2Ay9LzDSKoJV6P");
+const forestAudio = new Audio("https://audio.jukehost.co.uk/9S5REJa5SRjrMIgqmwInVPGEUCyVs9Kt");
 
 // Se configura cada audio como loop
 rainAudio.loop = true
@@ -30,6 +30,7 @@ forest.addEventListener("click", forestPlayer);
 
 // Funciones de para cada ruido
 function rainPlayer() {
+    rainAudio.volume = 0.4;
     numRain++;
     
     // if para saber si el número es par o impar, dependiendo reproduce o pausa el audio
@@ -56,6 +57,7 @@ function firePlayer() {
 }
 
 function windPlayer() {
+    windAudio.volume = 0.4;
     numWind++;
 
     if (numWind % 2 == 0) {
