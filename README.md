@@ -1,5 +1,4 @@
 # Noise Player 
-### 🚧 En construcción 🚧
-### Página web que reproduce ruidos de ambiente, hecho con HTML, CSS y JavaScript.
+### Web que genera ruido de fondo y sonidos ambientales para concentrarte.
 
 ### Para probarlo dale [aquí](https://noise-player-juankyyy.vercel.app/) 👈
