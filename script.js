@@ -1,33 +1,83 @@
-const lluvia = document.getElementById("Rain");
-const fuego = document.getElementById("Fire");
-const viento = document.getElementById("Wind");
-const bosque = document.getElementById("Forest");
+const rain = document.getElementById("rain");
+const fire = document.getElementById("fire");
+const wind = document.getElementById("wind");
+const forest = document.getElementById("forest");
 
-lluvia.addEventListener("click", reproducirLluvia);
-fuego.addEventListener("click", reproducirFuego);
-viento.addEventListener("click", reproducirViento);
-bosque.addEventListener("click", reproducirBosque);
+let numRain = 1
+let numFire = 1
+let numWind = 1
+let numForest = 1
 
-function reproducirLluvia() {
-    const audio = new Audio("./Noises/Rain.mp3");
-    audio.play();
-    console.log("Audio Lluvia empezó a reproducirse");
+const rainAudio = new Audio("./Noises/rain.mp3");
+const fireAudio = new Audio("./Noises/fire.mp3");
+const windAudio = new Audio("./Noises/wind.mp3");
+const forestAudio = new Audio("./Noises/forest.mp3");
+
+rainAudio.loop = true
+fireAudio.loop = true
+windAudio.loop = true
+forestAudio.loop = true
+
+rain.addEventListener("click", rainPlayer);
+fire.addEventListener("click", firePlayer);
+wind.addEventListener("click", windPlayer);
+forest.addEventListener("click", forestPlayer);
+
+function rainPlayer() {
+    numRain++;
+    
+    if (numRain % 2 == 0) {
+        rainAudio.play();
+        toggleHover("rain", true);
+    } else {
+        rainAudio.pause();
+        toggleHover("rain", false);
+    }
 }
 
-function reproducirFuego() {
-    const audio = new Audio("./Noises/Fire.mp3");
-    audio.play();
-    console.log("Audio Fuego empezó a reproducirse");
+function firePlayer() {
+    numFire++;
+
+    if (numFire % 2 == 0) {
+        toggleHover("fire", true);
+        fireAudio.play();
+    } else {
+        fireAudio.pause();
+        toggleHover("fire", false);
+    }
 }
 
-function reproducirViento() {
-    const audio = new Audio("./Noises/Wind.mp3");
-    audio.play();
-    console.log("Audio Viento empezó a reproducirse");
+function windPlayer() {
+    numWind++;
+
+    if (numWind % 2 == 0) {
+        toggleHover("wind", true);
+        windAudio.play();
+    } else {
+        windAudio.pause();
+        toggleHover("wind", false);
+    }
 }
 
-function reproducirBosque() {
-    const audio = new Audio("./Noises/Forest.mp3");
-    audio.play();
-    console.log("Audio Bosque empezó a reproducirse");
+function forestPlayer() {
+    forestAudio.loop = true
+    numForest++;
+
+    if (numForest % 2 == 0) {
+        toggleHover("forest", true);
+        forestAudio.play();
+    } else {
+        forestAudio.pause();
+        toggleHover("forest", false);
+    }
+}
+
+function toggleHover(name, stateHover) {
+    const btn = document.getElementById(`${name}`);
+
+    if (stateHover == true) {
+        btn.classList.add("svgToggle");
+    } else {
+        btn.classList.remove("svgToggle");
+    }
 }
