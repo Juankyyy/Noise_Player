@@ -4,6 +4,8 @@ const fire = document.getElementById("fire");
 const wind = document.getElementById("wind");
 const forest = document.getElementById("forest");
 
+const forestVolume = document.getElementById("forestVolume");
+
 // Se inicializan las iteraciones de cada botón
 let numRain = 1
 let numFire = 1
@@ -11,10 +13,10 @@ let numWind = 1
 let numForest = 1
 
 // Se inicializan los audios de cada ruido
-const rainAudio = new Audio("https://cdn.freesound.org/previews/7/7521_14018-lq.mp3");
-const fireAudio = new Audio("https://cdn.freesound.org/previews/651/651337_14128260-lq.mp3");
-const windAudio = new Audio("https://cdn.freesound.org/previews/463/463896_1648170-lq.mp3");
-const forestAudio = new Audio("https://cdn.freesound.org/previews/568/568214_832689-lq.mp3");
+const rainAudio = new Audio("./sounds/rain.mp3");
+const fireAudio = new Audio("./sounds/fire.mp3");
+const windAudio = new Audio("./sounds/wind.mp3");
+const forestAudio = new Audio("./sounds/forest.mp3");
 
 // Se configura cada audio como loop
 rainAudio.loop = true
@@ -27,6 +29,54 @@ rain.addEventListener("click", rainPlayer);
 fire.addEventListener("click", firePlayer);
 wind.addEventListener("click", windPlayer);
 forest.addEventListener("click", forestPlayer);
+
+rainVolume.addEventListener("input", setVolumeRain);
+fireVolume.addEventListener("input", setVolumeFire);
+windVolume.addEventListener("input", setVolumeWind);
+forestVolume.addEventListener("input", setVolumeForest);
+
+// audioContext
+const audioContext = new AudioContext();
+
+// Rain
+
+// Nodo de ganacia (amplificador)
+const gainNodeRain = audioContext.createGain();
+
+// conectar el audio a la ganacia
+const trackRain = audioContext.createMediaElementSource(rainAudio);
+trackRain.connect(gainNodeRain).connect(audioContext.destination);
+
+// Fire
+const gainNodeFire = audioContext.createGain();
+const trackFire = audioContext.createMediaElementSource(fireAudio);
+trackFire.connect(gainNodeFire).connect(audioContext.destination);
+
+// Wind
+const gainNodeWind = audioContext.createGain();
+const trackWind = audioContext.createMediaElementSource(windAudio); 
+trackWind.connect(gainNodeWind).connect(audioContext.destination);
+
+// Forest
+const gainNodeForest = audioContext.createGain();
+const trackForest = audioContext.createMediaElementSource(forestAudio);
+trackForest.connect(gainNodeForest).connect(audioContext.destination);
+
+function setVolumeWind () {
+    gainNodeWind.gain.value = windVolume.value;
+}
+
+function setVolumeFire () {
+    gainNodeFire.gain.value = fireVolume.value;
+}
+
+function setVolumeRain () {
+    gainNodeRain.gain.value = rainVolume.value;
+}
+
+function setVolumeForest () {
+    gainNodeForest.gain.value = forestVolume.value;
+}
 
 // Funciones de para cada ruido
 function rainPlayer() {

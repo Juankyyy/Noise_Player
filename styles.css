@@ -18,6 +18,42 @@ button {
     border: none;
 }
 
+header {
+    padding: 10px 20px;
+    margin: 20px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #282C35;
+    border-radius: 20px;
+    cursor: default;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    
+    img {
+        width: 30px;
+    }
+    
+    h1 {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .version {
+        color: #fff;
+        align-self: flex-end;
+        font-size: 12px;
+        margin-bottom: 6px;
+        margin-left: -6px;
+    }
+}
+
 .content {
     height: 100vh;
     display: flex;
@@ -39,6 +75,17 @@ button {
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.input-volume {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+
+    input {
+        width: 86px;
+    }
 }
 
 .svgs {
