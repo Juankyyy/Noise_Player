@@ -80,6 +80,10 @@ function setVolumeForest () {
 
 // Funciones de para cada ruido
 function rainPlayer() {
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
     numRain++;
     
     // if para saber si el número es par o impar, dependiendo reproduce o pausa el audio
@@ -94,6 +98,10 @@ function rainPlayer() {
 }
 
 function firePlayer() {
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
     numFire++;
 
     if (numFire % 2 == 0) {
@@ -106,6 +114,10 @@ function firePlayer() {
 }
 
 function windPlayer() {
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
     numWind++;
 
     if (numWind % 2 == 0) {
@@ -118,6 +130,10 @@ function windPlayer() {
 }
 
 function forestPlayer() {
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
     numForest++;
 
     if (numForest % 2 == 0) {
